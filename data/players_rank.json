@@ -1,0 +1,105 @@
+{
+  "version": "1.2",
+  "date": "2026-03-12",
+  "rankings":[
+  {
+    "id": "alcaraz-c",
+    "atpPoints": 9815,
+    "elo": {
+      "grass": 2080,
+      "hardOut": 2150,
+      "hardIndoor": 2110,
+      "clay": 2200
+    }
+  },
+  {
+    "id": "sinner-j",
+    "atpPoints": 8970,
+    "elo": {
+      "grass": 2010,
+      "hardOut": 2180,
+      "hardIndoor": 2160,
+      "clay": 2120
+    }
+  },
+  {
+    "id": "djokovic-n",
+    "atpPoints": 6540,
+    "elo": {
+      "grass": 2100,
+      "hardOut": 2130,
+      "hardIndoor": 2150,
+      "clay": 1980
+    }
+  },
+  {
+    "id": "zverev-a",
+    "atpPoints": 5755,
+    "elo": {
+      "grass": 1950,
+      "hardOut": 2080,
+      "hardIndoor": 2090,
+      "clay": 2040
+    }
+  },
+  {
+    "id": "musetti-l",
+    "atpPoints": 4430,
+    "elo": {
+      "grass": 1820,
+      "hardOut": 1900,
+      "hardIndoor": 1880,
+      "clay": 2060
+    }
+  },
+  {
+    "id": "minaur-a",
+    "atpPoints": 4195,
+    "elo": {
+      "grass": 1980,
+      "hardOut": 2020,
+      "hardIndoor": 1990,
+      "clay": 1890
+    }
+  },
+  {
+    "id": "fritz-t",
+    "atpPoints": 3890,
+    "elo": {
+      "grass": 1940,
+      "hardOut": 2070,
+      "hardIndoor": 2090,
+      "clay": 1750
+    }
+  },
+  {
+    "id": "shelton-b",
+    "atpPoints": 3510,
+    "elo": {
+      "grass": 1990,
+      "hardOut": 2010,
+      "hardIndoor": 1980,
+      "clay": 1780
+    }
+  },
+  {
+    "id": "auger-aliassime-f",
+    "atpPoints": 3245,
+    "elo": {
+      "grass": 1960,
+      "hardOut": 2000,
+      "hardIndoor": 2030,
+      "clay": 1810
+    }
+  },
+  {
+    "id": "bublik-a",
+    "atpPoints": 2870,
+    "elo": {
+      "grass": 2020,
+      "hardOut": 1910,
+      "hardIndoor": 1890,
+      "clay": 1650
+    }
+  }
+]}

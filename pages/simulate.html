@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simular - CourtSight Tennis</title>
+    <meta name="description" content="Simulador de Partidos - Próximamente">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- CSS Específico -->
+    <link rel="stylesheet" href="../css/simulate.css">
+</head>
+<body class="surface-simulate">
+    
+    <!-- ============================================
+    HEADER
+    ============================================ -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                    <span class="hamburger"></span>
+                </button>
+                <a href="../index.html" class="logo-link">
+                    <img src="../logo.png" alt="CourtSight Logo" class="logo-img">
+                    <h1>COURTSIGHT</h1>
+                </a>
+            </div>
+            
+            <div id="connection-status" class="connection-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Offline</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============================================
+    OVERLAY SIDEBAR (MÓVIL)
+    ============================================ -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    
+    <!-- ============================================
+    LAYOUT PRINCIPAL
+    ============================================ -->
+    <div class="app-layout">
+        
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="../index.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span>Inicio</span>
+                </a>
+                <a href="ranking-elo.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <span>Ranking ELO</span>
+                </a>
+                <a href="simulate.html" class="sidebar-item active">
+                    <span class="icon"><i class="fas fa-table-tennis-paddle-ball"></i></span>
+                    <span>Simular</span>
+                </a>
+                <a href="ranking-atp.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-trophy"></i></span>
+                    <span>Ranking ATP</span>
+                </a>
+                <a href="biblioteca.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-book"></i></span>
+                    <span>Biblioteca</span>
+                </a>
+                <a href="plan-premium.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-crown"></i></span>
+                    <span>Plan Premium</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- ============================================
+        CONTENIDO PRINCIPAL - MANTENIMIENTO
+        ============================================ -->
+        <main class="main-content">
+            
+            <div class="maintenance-container">
+                <div class="maintenance-icon">
+                    <i class="fas fa-table-tennis-paddle-ball"></i>
+                </div>
+                
+                <h1 class="maintenance-title">
+                    Simular Partido
+                </h1>
+                
+                <p class="maintenance-subtitle">
+                    Disfruta de nuestra versión beta libremente
+                </p>
+                
+                <p class="maintenance-message">
+                    <i class="fas fa-clock"></i>
+                    Esto estará disponible más tarde
+                </p>
+                
+                <div class="maintenance-badge">
+                    <i class="fas fa-tools"></i>
+                    Página en mantenimiento
+                </div>
+                
+                <a href="../index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i>
+                    Volver al Inicio
+                </a>
+            </div>
+            
+        </main>
+    </div>
+    
+    <!-- ============================================
+    FOOTER / INFO BAR
+    ============================================ -->
+    <footer class="info-bar">
+        <p class="info-text">CourtSight Tennis v1.0.0</p>
+        <a href="https://t.me/Eltonali05" class="telegram-contact" target="_blank" rel="noopener">
+            <span class="telegram-icon"><i class="fab fa-telegram-plane"></i></span>
+            <span>Soporte en Telegram</span>
+        </a>
+        <p class="version-text">100% Offline • Sin límites</p>
+    </footer>
+    
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script src="../js/app.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "intro-elo",
+    "title": "Introducción al Ranking ELO en Tenis",
+    "category": "Fundamentos",
+    "difficulty": "beginner",
+    "excerpt": "Aprende qué es el sistema ELO y cómo se utiliza para predecir resultados en el tenis profesional.",
+    "content": "El sistema ELO es un método de cálculo de habilidades relativas desarrollado originalmente para el ajedrez. En el tenis, se adapta para evaluar el rendimiento de los jugadores.\n\n**Conceptos clave:**\n- Cada jugador tiene una puntuación ELO inicial\n- Después de cada partido, los puntos se transfieren del perdedor al ganador\n- La cantidad de puntos depende de la diferencia de ELO entre los jugadores\n\n**Ventajas del ELO:**\n- Más preciso que el ranking ATP para predecir partidos\n- Considera la calidad del rival, no solo los títulos\n- Se actualiza después de cada partido",
+    "readTime": 5,
+    "updatedAt": "2026-03-12",
+    "author": "CourtSight"
+  },
+  {
+    "id": "superficies-tenis",
+    "title": "Las 4 Superficies del Tenis y Su Impacto",
+    "category": "Fundamentos",
+    "difficulty": "beginner",
+    "excerpt": "Descubre cómo cada superficie afecta el juego y por qué algunos jugadores son mejores en ciertas pistas.",
+    "content": "El tenis se juega en 4 superficies principales, cada una con características únicas:\n\n**Tierra Batida (Arcilla):**\n- Más lenta, bote más alto\n- Favorece a jugadores defensivos\n- Ejemplos: Nadal, Djokovic\n\n**Dura Outdoor:**\n- Velocidad media\n- Bote consistente\n- Ejemplos: Alcaraz, Sinner\n\n**Dura Indoor:**\n- Más rápida que outdoor\n- Sin viento ni sol\n- Favorece saques potentes\n\n**Hierba:**\n- La más rápida\n- Bote bajo e irregular\n- Ejemplos: Federer, Djokovic",
+    "readTime": 7,
+    "updatedAt": "2026-03-10",
+    "author": "CourtSight"
+  },
+  {
+    "id": "estadisticas-clave",
+    "title": "Estadísticas Clave para Analizar Partidos",
+    "category": "Análisis",
+    "difficulty": "intermediate",
+    "excerpt": "Las métricas esenciales que debes considerar antes de hacer tu predicción en un partido de tenis.",
+    "content": "**Estadísticas fundamentales:**\n\n1. **Porcentaje de primeros saques:** Indica consistencia\n2. **Puntos ganados con el primer saque:** Muestra efectividad\n3. **Puntos de break convertidos:** Presión en momentos clave\n4. **Ganadores vs No forzados:** Balance ofensivo\n5. **Rendimiento por superficie:** Historial específico\n\n**Cómo usar CourtSight:**\n- Compara el ELO de ambos jugadores\n- Revisa el historial en la superficie específica\n- Considera el momento de forma actual",
+    "readTime": 8,
+    "updatedAt": "2026-03-08",
+    "author": "CourtSight"
+  },
+  {
+    "id": "gestion-bankroll",
+    "title": "Gestión de Bankroll para Principiantes",
+    "category": "Estrategia",
+    "difficulty": "beginner",
+    "excerpt": "Aprende a administrar tu dinero de forma responsable y sostenible en las apuestas deportivas.",
+    "content": "**Reglas de oro del bankroll:**\n\n1. **Nunca apuestes más del 5%** de tu bankroll en una sola apuesta\n2. **Define un presupuesto mensual** y respétalo\n3. **No persigas pérdidas** - es el error más común\n4. **Lleva un registro** de todas tus apuestas\n5. **Reevalúa cada mes** tu estrategia\n\n**Ejemplo práctico:**\n- Bankroll inicial: $1000\n- Apuesta máxima por partido: $50 (5%)\n- Apuesta recomendada: 1-3% ($10-$30)",
+    "readTime": 6,
+    "updatedAt": "2026-03-05",
+    "author": "CourtSight"
+  },
+  {
+    "id": "valor-apuestas",
+    "title": "Cómo Identificar Value Bets en Tenis",
+    "category": "Estrategia",
+    "difficulty": "advanced",
+    "excerpt": "El concepto más importante para ser rentable a largo plazo: encontrar valor en las cuotas.",
+    "content": "**¿Qué es una Value Bet?**\n\nUna apuesta de valor existe cuando la probabilidad real de que ocurra un evento es MAYOR que la probabilidad implícita en la cuota.\n\n**Fórmula:**\nValor = (Probabilidad Real × Cuota) - 1\n\nSi el resultado es > 0, hay valor.\n\n**Ejemplo:**\n- Cuota ofrecida: 2.00 (50% implícito)\n- Tu análisis ELO: 60% probabilidad real\n- Valor = (0.60 × 2.00) - 1 = 0.20 (20% de valor)\n\n**Usa CourtSight para:**\n- Calcular probabilidades basadas en ELO\n- Comparar con las cuotas del mercado\n- Identificar discrepancias",
+    "readTime": 10,
+    "updatedAt": "2026-03-01",
+    "author": "CourtSight"
+  },
+  {
+    "id": "patrones-torneos",
+    "title": "Patrones Estacionales en el Circuito ATP",
+    "category": "Análisis",
+    "difficulty": "intermediate",
+    "excerpt": "Entiende cómo el calendario del tenis afecta el rendimiento de los jugadores durante el año.",
+    "content": "**Calendario ATP y patrones:**\n\n**Enero-Febrero (Hard Court Australia/Asia):**\n- Jugadores en plena forma física\n- Clima caluroso favorece resistencia\n\n**Marzo-Abril (Indian Wells, Miami):**\n- Torneos Masters 1000\n- Todos los top players participan\n\n**Mayo-Junio (Tierra Europea):**\n- Especialistas en arcilla dominan\n- Nadal, Djokovic elevan nivel\n\n**Junio-Julio (Hierba/Wimbledon):**\n- Temporada corta, especializada\n- Saque y volea más importantes\n\n**Agosto-Septiembre (US Open Series):**\n- Calor extremo en Nueva York\n- Resistencia física clave",
+    "readTime": 9,
+    "updatedAt": "2026-02-28",
+    "author": "CourtSight"
+  },
+  {
+    "id": "psicologia-tenis",
+    "title": "Psicología del Tenis: Factores Mentales",
+    "category": "Análisis",
+    "difficulty": "advanced",
+    "excerpt": "El componente mental puede decidir partidos igualados. Aprende a identificarlo.",
+    "content": "**Factores psicológicos clave:**\n\n1. **Presión en puntos importantes:**\n   - Algunos jugadores crecen, otros se encogen\n   - Revisa estadísticas de tie-breaks\n\n2. **Historial entre jugadores (H2H):**\n   - Matchups psicológicos importan\n   - Algunos estilos crean incomodidad\n\n3. **Momento de forma:**\n   - Rachas de victorias/derrotas\n   - Confianza visible en pista\n\n4. **Factores externos:**\n   - Público local\n   - Condiciones climáticas\n   - Lesiones recientes",
+    "readTime": 8,
+    "updatedAt": "2026-02-25",
+    "author": "CourtSight"
+  },
+  {
+    "id": "sistema-courtsight",
+    "title": "Cómo Funciona el Sistema CourtSight",
+    "category": "Plataforma",
+    "difficulty": "beginner",
+    "excerpt": "Guía completa para aprovechar al máximo todas las herramientas de CourtSight Tennis.",
+    "content": "**Características principales:**\n\n1. **Ranking ELO Dinámico:**\n   - Actualizado después de cada partido\n   - Separado por superficie\n   - Más preciso que ATP para predicciones\n\n2. **Simulador de Partidos:**\n   - Calcula probabilidades en tiempo real\n   - Considera superficie y ELO específico\n   - 100% offline\n\n3. **Base de Datos Completa:**\n   - 399 jugadores profesionales\n   - Estadísticas históricas\n   - Importación vía Telegram\n\n4. **Biblioteca de Guías:**\n   - Educación continua\n   - Todos los niveles\n   - Actualizaciones mensuales",
+    "readTime": 6,
+    "updatedAt": "2026-03-12",
+    "author": "CourtSight"
+  }
+]
