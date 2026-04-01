@@ -1,6 +1,6 @@
 /* ============================================
 COURT SIGHT TENNIS - SIMULADOR JS
-Versión Compleja con Búsqueda Simple
+Versión Compleja con Búsqueda Simple + Elo Espaciado
 ============================================ */
 
 // ESTADO GLOBAL
@@ -14,7 +14,7 @@ let simulationHistory = [];
 // INICIALIZACIÓN
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🎾 Simulador cargado - Versión Compleja');
+    console.log('🎾 Simulador cargado - Versión Elo Espaciado');
     loadPlayers();
     initEventListeners();
     loadHistory();
@@ -41,13 +41,13 @@ async function loadPlayers() {
         
         // Fusionar
         allPlayers = rank.rankings.map(r => {
-            const d = db.find(p => p.id === r.id);
+            const d = db.find(p => p.id?.trim() === r.id?.trim());
             if (!d) return null;
             return {
-                id: r.id,
-                name: d.name,
-                nationality: d.nationality,
-                flagUrl: d.flagUrl,
+                id: r.id?.trim(),
+                name: d.name?.trim(),
+                nationality: d.nationality?.trim(),
+                flagUrl: d.flagUrl?.trim(),
                 rank: d.rank,
                 elo: r.elo
             };
@@ -121,7 +121,7 @@ function searchPlayer(query, playerNum) {
     
     const filtered = allPlayers.filter(p => {
         const elo = getElo(p, currentSurface);
-        return p.name.toLowerCase().includes(query) && elo > 0;
+        return p.name?.toLowerCase().includes(query) && elo > 0;
     }).slice(0, 10);
     
     if (filtered.length === 0) {
@@ -199,7 +199,6 @@ function showSelectedPlayer(num) {
     container.classList.remove('hidden');
     searchBox.classList.add('hidden');
 
-     // ← AGREGAR ESTO: Actualizar dropdown de cuotas
     updateOddsDropdown();
 }
 
@@ -209,7 +208,6 @@ function removePlayer(num) {
     
     document.getElementById(`player${num}-selected`).classList.add('hidden');
     document.getElementById(`player${num}-search`).parentElement.classList.remove('hidden');
-    // ← AGREGAR ESTO: Actualizar dropdown de cuotas
     updateOddsDropdown();
     
     updateSimulateButton();
@@ -220,7 +218,74 @@ function updateSimulateButton() {
 }
 
 // ============================================
-// SIMULACIÓN COMPLEJA
+// 🎯 SIMULACIÓN MEJORADA CON ELO ESPACIADO
+// ============================================
+function calculateSimulation() {
+    // ========================================
+    // ⚙️ PARÁMETROS CONFIGURABLES (AJUSTABLES)
+    // ========================================
+    const CONFIG = {
+        eloDivisor: 700,        // ↑ Suaviza probabilidades (400=original, 600=recomendado para Elo 2000+)
+        minProb: 0.15,          // Probabilidad mínima para cualquier jugador (15%)
+        maxProb: 0.85,          // Probabilidad máxima (85%)
+        simulations: 10000,     // Iteraciones para convergencia estadística
+        uncertainty: 50         // Factor de incertidumbre añadido al cálculo
+    };
+    
+    const elo1 = player1.elo;
+    const elo2 = player2.elo;
+    
+    // ========================================
+    // 🎯 FÓRMULA ELO MEJORADA PARA VALORES ESPACIADOS
+    // ========================================
+    
+    // 1. Calcular diferencia con factor de incertidumbre
+    const eloDiff = elo1 - elo2;
+    const adjustedDiff = eloDiff / Math.sqrt(1 + Math.pow(CONFIG.uncertainty / 400, 2));
+    
+    // 2. Probabilidad base con divisor ajustado (maneja Elo 1500-2200 sin extremos)
+    let prob1 = 1 / (1 + Math.pow(10, -adjustedDiff / CONFIG.eloDivisor));
+    
+    // 3. Aplicar límites para evitar probabilidades extremas (permite upsets realistas)
+    prob1 = Math.max(CONFIG.minProb, Math.min(CONFIG.maxProb, prob1));
+    const prob2 = 1 - prob1;
+    
+    // ========================================
+    // 🎲 SIMULACIÓN MONTE CARLO (Seed determinístico)
+    // ========================================
+    const seedStr = `${player1.id}_${player2.id}_${currentSurface}`;
+    const seed = hashString(seedStr);
+    
+    let wins1 = 0;
+    for (let i = 0; i < CONFIG.simulations; i++) {
+        const random = seededRandom(seed + i);
+        if (random < prob1) wins1++;
+    }
+    
+    // ========================================
+    // 📊 RESULTADOS FINALES
+    // ========================================
+    const finalProb1 = (wins1 / CONFIG.simulations) * 100;
+    const finalProb2 = 100 - finalProb1;
+    
+    // Cuotas con ajuste por margen de casa (5% típico)
+    const margin = 1.05;
+    const odds1 = 1 / ((finalProb1 / 100) * margin);
+    const odds2 = 1 / ((finalProb2 / 100) * margin);
+    
+    return {
+        player1: { ...player1, prob: finalProb1, odds: odds1, wins: wins1 },
+        player2: { ...player2, prob: finalProb2, odds: odds2, wins: CONFIG.simulations - wins1 },
+        eloDiff: Math.abs(elo1 - elo2),
+        adjustedEloDiff: Math.abs(adjustedDiff),
+        surface: currentSurface,
+        timestamp: new Date().toISOString(),
+        config: { ...CONFIG } // Para debugging (opcional)
+    };
+}
+
+// ============================================
+// EJECUCIÓN DE SIMULACIÓN (UI)
 // ============================================
 async function runSimulation() {
     if (!player1 || !player2) return;
@@ -256,41 +321,6 @@ async function runSimulation() {
             document.getElementById('results').classList.remove('hidden');
         }, 300);
     }, 1500);
-}
-
-function calculateSimulation() {
-    const elo1 = player1.elo;
-    const elo2 = player2.elo;
-    
-    // Fórmula ELO
-    const prob1 = 1 / (1 + Math.pow(10, (elo2 - elo1) / 400));
-    const prob2 = 1 - prob1;
-    
-    // Seed determinístico
-    const seedStr = `${player1.id}_${player2.id}_${currentSurface}`;
-    const seed = hashString(seedStr);
-    
-    // 10,000 simulaciones
-    let wins1 = 0;
-    for (let i = 0; i < 10000; i++) {
-        const random = seededRandom(seed + i);
-        if (random < prob1) wins1++;
-    }
-    const wins2 = 10000 - wins1;
-    
-    const finalProb1 = (wins1 / 10000) * 100;
-    const finalProb2 = (wins2 / 10000) * 100;
-    
-    const odds1 = 1 / (finalProb1 / 100);
-    const odds2 = 1 / (finalProb2 / 100);
-    
-    return {
-        player1: { ...player1, prob: finalProb1, odds: odds1, wins: wins1 },
-        player2: { ...player2, prob: finalProb2, odds: odds2, wins: wins2 },
-        eloDiff: Math.abs(elo1 - elo2),
-        surface: currentSurface,
-        timestamp: new Date().toISOString()
-    };
 }
 
 // ============================================
@@ -462,11 +492,7 @@ function resetSimulation() {
     
     document.getElementById('results').classList.add('hidden');
     document.getElementById('simulate-form').classList.remove('hidden');
-    // ← AGREGAR ESTO: Resetear dropdown a valores por defecto
     updateOddsDropdown();
-    
-    document.getElementById('results').classList.add('hidden');
-    document.getElementById('simulate-form').classList.remove('hidden');
     
     updateSimulateButton();
 }
