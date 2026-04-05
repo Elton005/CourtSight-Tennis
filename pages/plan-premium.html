@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Premium - CourtSight Tennis</title>
+    <meta name="description" content="Apoya el desarrollo de CourtSight: simulación avanzada, academia de apuestas y expansión a otros deportes">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../flags/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- CSS Específico Premium -->
+    <link rel="stylesheet" href="../css/plan-premium.css">
+</head>
+<body class="surface-premium">
+    
+    <!-- ============================================
+    HEADER
+    ============================================ -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                    <span class="hamburger"></span>
+                </button>
+                <img src="../flags/logo.png" alt="CourtSight Logo" class="logo-img">
+                <h1>COURTSIGHT</h1>
+            </div>
+            
+            <div id="connection-status" class="connection-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Offline</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ============================================
+    OVERLAY SIDEBAR (MÓVIL)
+    ============================================ -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+    
+    <!-- ============================================
+    LAYOUT PRINCIPAL
+    ============================================ -->
+    <div class="app-layout">
+        
+        <!-- SIDEBAR -->
+        <aside id="sidebar" class="sidebar">
+            <nav class="sidebar-menu">
+                <a href="../index.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span>Inicio</span>
+                </a>
+                <a href="ranking-elo.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <span>Ranking ELO</span>
+                </a>
+                <a href="simulate.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-table-tennis-paddle-ball"></i></span>
+                    <span>Simular</span>
+                </a>
+                <a href="ranking-atp.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-trophy"></i></span>
+                    <span>Ranking ATP</span>
+                </a>
+                <a href="biblioteca.html" class="sidebar-item">
+                    <span class="icon"><i class="fas fa-book"></i></span>
+                    <span>Biblioteca</span>
+                </a>
+                <a href="plan-premium.html" class="sidebar-item active">
+                    <span class="icon"><i class="fas fa-crown"></i></span>
+                    <span>Plan Premium</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <!-- ============================================
+        CONTENIDO PRINCIPAL - PLAN PREMIUM REALISTA
+        ============================================ -->
+        <main class="main-content premium-content">
+            
+            <!-- Hero Section -->
+            <section class="premium-hero">
+                <div class="premium-badge">
+                    <i class="fas fa-flask"></i> PROYECTO EN DESARROLLO ACTIVO
+                </div>
+                
+                <h1 class="premium-title">
+                    <span class="gold-text">Plan</span> Premium
+                </h1>
+                
+                <p class="premium-subtitle">
+                    Somos un colectivo de desarrolladores cubanos investigando <strong>cómo funcionan las casas de apuestas</strong>. 
+                    CourtSight es nuestro laboratorio público: código abierto, sin anuncios, 100% offline.
+                </p>
+                
+                <div class="premium-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">2026</div>
+                        <div class="stat-label">Academia de Apuestas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">2027</div>
+                        <div class="stat-label">Expansión a otros deportes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Sin anuncios ni trackers</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Funcionalidades en Desarrollo -->
+            <section class="premium-coming">
+                <div class="section-header">
+                    <h2><i class="fas fa-code-branch"></i> Funcionalidades Premium en Desarrollo</h2>
+                    <p class="section-description">Estas herramientas avanzadas están en construcción. Tu apoyo acelera su lanzamiento.</p>
+                </div>
+                
+                <div class="features-grid">
+                    <!-- Feature 1: Simulación en Vivo -->
+                    <div class="feature-card">
+                        <div class="feature-icon premium-gold">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Simulación en Vivo</h3>
+                        <p>Motor que simula partidos punto a punto con factores dinámicos reales:</p>
+                        <ul class="feature-list">
+                            <li><span class="highlight">%</span> de remontadas según fatiga acumulada</li>
+                            <li>Presión psicológica en tie-breaks (basado en datos históricos)</li>
+                            <li>Efecto del saque en césped vs arcilla (velocidad real de bote)</li>
+                            <li>Adaptación táctica tras sets perdidos (machine learning ligero)</li>
+                        </ul>
+                        <div class="feature-status"><span class="status-badge status-dev">En desarrollo • Q4 2026</span></div>
+                    </div>
+                    
+                    <!-- Feature 2: Academia de Apuestas -->
+                    <div class="feature-card">
+                        <div class="feature-icon premium-clay">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Academia de Apuestas</h3>
+                        <p>Formación práctica para entender cómo piensan las casas de apuestas:</p>
+                        <ul class="feature-list">
+                            <li>Curso "Descifrando cuotas": cómo detectar valor real</li>
+                            <li>Análisis semanales de errores del mercado (con casos reales)</li>
+                            <li>Simulador de bankroll con escenarios de rachas negativas</li>
+                            <li>Comunidad exclusiva en Telegram con Sascha Oficial (tipster profesional)</li>
+                        </ul>
+                        <div class="feature-status"><span class="status-badge status-launch">Lanzamiento • Julio 2026</span></div>
+                    </div>
+                    
+                    <!-- Feature 3: Perfiles Tácticos -->
+                    <div class="feature-card">
+                        <div class="feature-icon premium-gold">
+                            <i class="fas fa-user-ninja"></i>
+                        </div>
+                        <h3>Perfiles Tácticos Profundos</h3>
+                        <p>Cada jugador con su "huella digital" basada en datos reales:</p>
+                        <ul class="feature-list">
+                            <li>Debilidades por superficie (ej: revés cruzado en césped)</li>
+                            <li>Patrones bajo presión (rendimiento en sets decisivos)</li>
+                            <li>Historial vs tipos de juego (sacadores, defensores, atacantes)</li>
+                            <li>Alertas de fatiga por calendario (días entre partidos)</li>
+                        </ul>
+                        <div class="feature-status"><span class="status-badge status-dev">En desarrollo • Q1 2027</span></div>
+                    </div>
+                    
+                    <!-- Feature 4: Multi-Deporte -->
+                    <div class="feature-card">
+                        <div class="feature-icon premium-clay">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3>Expansión Multi-Deporte</h3>
+                        <p>No solo tenis. Estamos construyendo el mismo modelo para:</p>
+                        <ul class="feature-list">
+                            <li>🏀 Baloncesto (NBA/Euroleague)</li>
+                            <li>⚽ Fútbol (ligas europeas + Sudamérica)</li>
+                            <li>⚾ Béisbol (MLB + Serie Nacional cubana)</li>
+                            <li>🏒 Hockey (NHL)</li>
+                        </ul>
+                        <div class="feature-status"><span class="status-badge status-future">Roadmap • 2027</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cómo Apoyar el Proyecto -->
+            <section class="premium-support">
+                <div class="section-header">
+                    <h2><i class="fas fa-hands-helping"></i> Cómo Apoyar CourtSight</h2>
+                    <p class="section-description">No vendemos "accesos mágicos". Apoyamos investigación real. Tú eliges cómo contribuir:</p>
+                </div>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Donaciones económicas</h3>
+                        <p>Transferencia única para acelerar desarrollo. Sin compromisos.</p>
+                    
+                        </div>
+                        <p class="support-note">100% va a servidores, datos históricos y horas de desarrollo.</p>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Aporta ideas</h3>
+                        <p>¿Qué funcionalidad necesitas? Tu feedback define nuestra hoja de ruta.</p>
+                        <ul class="support-list">
+                            <li>Formulario de sugerencias en la app</li>
+                            <li>Encuestas mensuales en Telegram</li>
+                            <li>Acceso beta temprana para testers activos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon"><i class="fas fa-user-friends"></i></div>
+                        <h3>Acción simbólica</h3>
+                        <p>No vendemos acciones reales, pero sí reconocimiento:</p>
+                        <ul class="support-list">
+                            <li>Tu nombre en "Colaboradores" del proyecto</li>
+                            <li>Voto en decisiones de roadmap</li>
+                            <li>Acceso vitalicio a todas las funciones premium</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="support-footer">
+                    <p><i class="fas fa-shield-alt"></i> <strong>Transparente:</strong> Publicamos mensualmente en Telegram cómo se usan los fondos recibidos.</p>
+                    <p><i class="fas fa-lock"></i> <strong>Privado:</strong> Nunca vendemos datos. CourtSight es 100% offline por diseño.</p>
+                    <p><i class="fas fa-globe-americas"></i> <strong>Inclusivo:</strong> Si no puedes donar, tu feedback y uso diario ya es apoyo valioso.</p>
+                </div>
+            </section>
+
+            <!-- Filosofía Realista -->
+            <section class="premium-philosophy">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Nuestra promesa realista</h3>
+                    <p>CourtSight <strong>nunca tendrá anuncios ni venderá tus datos</strong>. Pero sí necesitamos sostenibilidad:</p>
+                    <ul class="philosophy-list">
+                        <li>✅ La versión <strong>gratuita siempre existirá</strong> con ELO básico y simulación estándar</li>
+                        <li>✅ Las funciones <strong>premium son opcionales</strong>: para quienes quieren herramientas avanzadas <em>y</em> apoyar el proyecto</li>
+                        <li>✅ <strong>100% offline</strong>: ninguna función premium requiere conexión constante</li>
+                        <li>✅ <strong>Sin engaños</strong>: no prometemos "nunca de pago". Prometemos transparencia y valor real</li>
+                    </ul>
+                    <div class="philosophy-footer">
+                        <i class="fas fa-code"></i> Somos desarrolladores, no vendedores. Construimos lo que nosotros usaríamos.
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="premium-cta">
+                <div class="cta-container">
+                    <div class="cta-icon">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <h3>Únete a la investigación</h3>
+                    <p>Recibe actualizaciones de desarrollo, participa en decisiones y forma parte del laboratorio CourtSight.</p>
+                    <a href="https://t.me/+Y9QcM9kKx4wwMTE5" class="btn-telegram" target="_blank" rel="noopener">
+                        <i class="fab fa-telegram-plane"></i> Grupo Oficial con Sascha Oficial
+                    </a>
+                    <p class="cta-note">Canal gestionado por Sascha Oficial - Tipster profesional especializado en tenis</p>
+                    <p class="cta-subnote">Aquí compartimos avances, bugs y cómo las casas de apuestas realmente calculan sus márgenes.</p>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+    
+    <!-- ============================================
+    FOOTER / INFO BAR
+    ============================================ -->
+    <footer class="info-bar">
+        <p class="info-text">CourtSight Tennis v1.0.0</p>
+        <a href="https://t.me/Eltonali05" class="telegram-contact" target="_blank" rel="noopener">
+            <span class="telegram-icon"><i class="fab fa-telegram-plane"></i></span>
+            <span>Soporte en Telegram</span>
+        </a>
+        <p class="version-text">100% Offline • Hecho en Cuba 🇨🇺 • Investigación abierta</p>
+    </footer>
+    
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script src="../js/app.js"></script>
+    <script src="../js/plan-premium.js"></script>
+    
+</body>
+</html>
