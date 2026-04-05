@@ -1,0 +1,250 @@
+/* ============================================
+COURT SIGHT TENNIS - PÁGINAS DE MANTENIMIENTO
+🎨 TEMA: ROLAND GARROS PREMIUM (PARTE 5/6)
+============================================ */
+
+/* ============================================
+🎨 VARIABLES DEFINITIVAS (Unificadas)
+============================================ */
+:root {
+    /* Paleta Premium */
+    --gold: #C9A24E;
+    --gold-light: #E5C76A;
+    --gold-dim: rgba(201, 162, 78, 0.15);
+    --accent: #B35A3C;
+    --accent-hover: #9A4A30;
+    --accent-light: #D47A5C;
+    
+    /* Fondos */
+    --bg-primary: #1A1512;
+    --bg-secondary: #241E18;
+    --bg-card: #2E261D;
+    
+    /* Texto */
+    --text-primary: #F8F3EB;
+    --text-secondary: #B8A894;
+    --text-muted: #8A7D6C;
+    
+    /* Estados & Utilidades */
+    --success: #5A8C5A;
+    --danger: #C0392B;
+    --warning: #D4A04A;
+    --border: #C9A24E;
+    
+    /* UI */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --shadow: 0 4px 12px rgba(26, 21, 18, 0.5);
+    --shadow-lg: 0 8px 24px rgba(26, 21, 18, 0.6);
+    --shadow-gold: rgba(201, 162, 78, 0.2);
+}
+
+/* Unificar páginas de mantenimiento bajo el tema Roland Garros Premium */
+body.surface-premium,
+body.surface-simulate {
+    --surface-color: var(--gold);
+    --surface-gradient: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+}
+
+/* ============================================
+🔧 CONTENEDOR DE MANTENIMIENTO
+============================================ */
+.maintenance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: var(--spacing-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+🎯 ICONO PRINCIPAL (Premium Gold)
+============================================ */
+.maintenance-icon {
+    width: 120px;
+    height: 120px;
+    background: var(--surface-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+    box-shadow: 0 8px 24px var(--shadow-gold);
+    animation: float 3s ease-in-out infinite;
+    border: 2px solid var(--gold-light);
+}
+
+.maintenance-icon i {
+    font-size: 3.5rem;
+    color: var(--bg-primary); /* Texto oscuro sobre dorado para contraste AAA */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ============================================
+📝 TÍTULOS Y MENSAJES
+============================================ */
+.maintenance-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+}
+
+.maintenance-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.maintenance-message {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold-dim);
+    color: var(--gold-light);
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    border: 1px solid rgba(201, 162, 78, 0.4);
+    box-shadow: 0 2px 8px var(--shadow-gold);
+}
+
+.maintenance-message i {
+    animation: pulse 2s ease-in-out infinite;
+    color: var(--gold-light);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================================
+🏷️ BADGE DE MANTENIMIENTO
+============================================ */
+.maintenance-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    color: var(--text-muted);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xl);
+    border: 1px solid var(--border);
+}
+
+.maintenance-badge i {
+    color: var(--gold);
+}
+
+/* ============================================
+⬅️ BOTÓN VOLVER (Premium)
+============================================ */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface-gradient);
+    color: var(--bg-primary); /* Texto oscuro sobre dorado para contraste AAA */
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 14px var(--shadow-gold);
+    border: 1px solid var(--gold-light);
+}
+
+.btn-back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-gold);
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--accent-light) 100%);
+}
+
+.btn-back i {
+    transition: transform 0.3s;
+}
+
+.btn-back:hover i {
+    transform: translateX(-4px);
+}
+
+/* ============================================
+📱 RESPONSIVE - MÓVIL
+============================================ */
+@media (max-width: 768px) {
+    .maintenance-container {
+        min-height: 50vh;
+        padding: var(--spacing-md);
+    }
+    
+    .maintenance-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .maintenance-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .maintenance-title {
+        font-size: 1.5rem;
+    }
+    
+    .maintenance-subtitle {
+        font-size: 1rem;
+    }
+    
+    .maintenance-message {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* ============================================
+📱 RESPONSIVE - MÓVIL PEQUEÑO
+============================================ */
+@media (max-width: 480px) {
+    .maintenance-icon {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .maintenance-icon i {
+        font-size: 2rem;
+    }
+    
+    .maintenance-title {
+        font-size: 1.3rem;
+    }
+    
+    .btn-back {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.85rem;
+        width: 100%;
+        justify-content: center;
+    }
+}

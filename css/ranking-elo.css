@@ -1,0 +1,529 @@
+/* ============================================
+COURT SIGHT TENNIS - RANKING ELO CSS
+🎨 TEMA: ROLAND GARROS PREMIUM (PARTE 3/6)
+============================================ */
+
+/* ============================================
+🎨 VARIABLES DEFINITIVAS (Unificadas por superficie)
+============================================ */
+:root {
+    /* Paleta Premium */
+    --gold: #C9A24E;
+    --gold-light: #E5C76A;
+    --gold-dim: rgba(201, 162, 78, 0.15);
+    --accent: #B35A3C;
+    --accent-hover: #9A4A30;
+    --accent-light: #D47A5C;
+    
+    /* Fondos */
+    --bg-primary: #1A1512;
+    --bg-secondary: #241E18;
+    --bg-card: #2E261D;
+    
+    /* Texto */
+    --text-primary: #F8F3EB;
+    --text-secondary: #B8A894;
+    --text-muted: #8A7D6C;
+    
+    /* Estados & Utilidades */
+    --success: #5A8C5A;
+    --danger: #C0392B;
+    --warning: #D4A04A;
+    --border: #C9A24E;
+    
+    /* UI */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --shadow: 0 4px 12px rgba(26, 21, 18, 0.5);
+    --shadow-lg: 0 8px 24px rgba(26, 21, 18, 0.6);
+    --shadow-gold: rgba(201, 162, 78, 0.2);
+}
+
+/* Unificar todas las superficies bajo el tema Roland Garros Premium */
+body.surface-total,
+body.surface-hard-outdoor,
+body.surface-hard-indoor,
+body.surface-clay,
+body.surface-grass {
+    --surface-color: var(--gold);
+    --surface-gradient: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+}
+
+/* ============================================
+📊 HEADER DE SECCIÓN
+============================================ */
+.section-header {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--border);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 600px;
+}
+
+/* ============================================
+🏷️ BADGES INFORMATIVOS
+============================================ */
+.info-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+}
+
+.badge i {
+    color: var(--gold);
+    font-size: 1rem;
+}
+
+.badge:hover {
+    border-color: var(--gold-light);
+    background: var(--gold-dim);
+    color: var(--text-primary);
+}
+
+/* ============================================
+🎾 FILTRO DE SUPERFICIE (DESPLEGABLE)
+============================================ */
+.surface-filter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    max-width: 300px;
+}
+
+.surface-filter label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.surface-filter label i {
+    color: var(--gold);
+}
+
+.surface-select {
+    padding: 0.8rem 1.2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C9A24E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+.surface-select:focus {
+    outline: none;
+    border-color: var(--gold-light);
+    box-shadow: 0 0 0 3px var(--shadow-gold);
+}
+
+.surface-select:hover {
+    border-color: var(--gold-light);
+}
+
+.surface-select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: 0.8rem;
+}
+
+/* ============================================
+📋 TABLA DE RANKING
+============================================ */
+.ranking-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.ranking-table thead {
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--border);
+}
+
+.ranking-table th {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.ranking-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: all 0.2s;
+}
+
+.ranking-table tbody tr:hover {
+    background: var(--gold-dim);
+}
+
+.ranking-table td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+}
+
+/* Columnas específicas */
+.col-pos {
+    width: 60px;
+    text-align: center;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.col-player {
+    min-width: 200px;
+}
+
+.col-country {
+    width: 100px;
+    text-align: center;
+}
+
+.col-elo {
+    width: 120px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 1.05rem;
+}
+
+/* ============================================
+🥇🥈🥉 TOP 3 DESTACADO (Ajustado para fondo oscuro)
+============================================ */
+/* Primer Lugar - ORO PREMIUM */
+.ranking-table tbody tr.rank-1 {
+    background: linear-gradient(90deg, rgba(201, 162, 78, 0.25) 0%, transparent 100%);
+    border-left: 4px solid var(--gold-light);
+    box-shadow: inset 0 0 20px rgba(201, 162, 78, 0.1);
+}
+
+.ranking-table tbody tr.rank-1 .col-pos {
+    color: var(--gold-light);
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px rgba(229, 199, 106, 0.4);
+}
+
+.ranking-table tbody tr.rank-1 .col-elo {
+    color: var(--gold-light);
+}
+
+/* Segundo Lugar - PLATA CÁLIDA */
+.ranking-table tbody tr.rank-2 {
+    background: linear-gradient(90deg, rgba(192, 180, 150, 0.18) 0%, transparent 100%);
+    border-left: 4px solid #C0B496;
+}
+
+.ranking-table tbody tr.rank-2 .col-pos {
+    color: #C0B496;
+    font-size: 1.2rem;
+}
+
+.ranking-table tbody tr.rank-2 .col-elo {
+    color: #C0B496;
+}
+
+/* Tercer Lugar - BRONCE TIERRA */
+.ranking-table tbody tr.rank-3 {
+    background: linear-gradient(90deg, rgba(179, 90, 60, 0.2) 0%, transparent 100%);
+    border-left: 4px solid var(--accent);
+}
+
+.ranking-table tbody tr.rank-3 .col-pos {
+    color: var(--accent-light);
+    font-size: 1.2rem;
+}
+
+.ranking-table tbody tr.rank-3 .col-elo {
+    color: var(--accent-light);
+}
+
+/* ============================================
+👤 INFORMACIÓN DEL JUGADOR
+============================================ */
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.player-flag {
+    width: 28px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+}
+
+.player-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.player-country-code {
+    display: inline-block;
+    background: var(--bg-card);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+⏳ ESTADO DE CARGA
+============================================ */
+.state-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+}
+
+.loading-spinner {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.loading-spinner i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.state-container p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* ============================================
+📭 ESTADO VACÍO
+============================================ */
+.empty-state .state-icon {
+    font-size: 4rem;
+    color: var(--text-muted);
+    margin-bottom: var(--spacing-md);
+    opacity: 0.6;
+}
+
+.empty-state h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 400px;
+}
+
+/* ============================================
+📱 RESPONSIVE - TABLET
+============================================ */
+@media (max-width: 1024px) {
+    .surface-selector {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .surface-btn {
+        flex: 1 1 45%;
+        min-width: 130px;
+    }
+    
+    .ranking-table th,
+    .ranking-table td {
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* ============================================
+📱 RESPONSIVE - MÓVIL
+============================================ */
+@media (max-width: 768px) {
+    .section-title { font-size: 1.5rem; }
+    .section-subtitle { font-size: 0.85rem; }
+    .info-badges { flex-direction: column; }
+    .badge { width: 100%; justify-content: flex-start; }
+    .surface-selector { flex-direction: column; }
+    .surface-btn { flex: 1 1 100%; width: 100%; }
+    .ranking-table th, .ranking-table td { padding: 0.7rem 0.8rem; font-size: 0.85rem; }
+    .col-pos { width: 50px; }
+    .col-elo { width: 100px; font-size: 0.95rem; }
+    .player-flag { width: 24px; height: 24px; }
+    .player-name { font-size: 0.85rem; }
+}
+
+/* ============================================
+📱 RESPONSIVE - MÓVIL PEQUEÑO
+============================================ */
+@media (max-width: 480px) {
+    .section-title { font-size: 1.3rem; }
+    .surface-btn { padding: 0.6rem 1rem; font-size: 0.85rem; }
+    .surface-btn i { font-size: 1rem; }
+    .ranking-table th { font-size: 0.7rem; padding: 0.6rem 0.5rem; }
+    .ranking-table td { padding: 0.6rem 0.5rem; }
+    .player-info { gap: 0.5rem; }
+    .player-flag { width: 20px; height: 20px; }
+    .player-name { font-size: 0.8rem; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .player-country-code { display: none; }
+    .col-country { display: none; }
+}
+
+/* ============================================
+🎨 ANIMACIONES
+============================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ranking-container { animation: fadeInUp 0.4s ease-out; }
+
+.ranking-table tbody tr {
+    animation: fadeInUp 0.3s ease-out;
+    animation-fill-mode: both;
+}
+
+/* Stagger animation para filas */
+.ranking-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.ranking-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.ranking-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.ranking-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.ranking-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+.ranking-table tbody tr:nth-child(n+6) { animation-delay: 0.3s; }
+
+/* ============================================
+🔧 UTILIDADES
+============================================ */
+.hidden { display: none !important; }
+
+/* Scrollbar personalizado para la tabla */
+.table-responsive::-webkit-scrollbar { height: 8px; }
+.table-responsive::-webkit-scrollbar-track { background: var(--bg-primary); border-radius: 4px; }
+.table-responsive::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.table-responsive::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+
+/* ============================================
+🏆 ICONO DE TROFEO PARA TOP 3
+============================================ */
+.rank-trophy { margin-left: 0.5rem; font-size: 0.9rem; }
+.rank-1 .rank-trophy { color: var(--gold-light); text-shadow: 0 0 6px rgba(229, 199, 106, 0.5); }
+.rank-2 .rank-trophy { color: #C0B496; }
+.rank-3 .rank-trophy { color: var(--accent-light); }
+
+/* ============================================
+💡 TOOLTIP PARA PUNTOS ELO (Premium)
+============================================ */
+.col-elo {
+    position: relative;
+    cursor: help;
+}
+
+.col-elo::after {
+    content: attr(data-elo-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    border: 1px solid var(--gold);
+    box-shadow: 0 4px 16px rgba(201, 162, 78, 0.25);
+    z-index: 10;
+}
+
+.col-elo:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 8px);
+}
+
+/* ============================================
+🎯 HIGHLIGHT PARA CAMBIOS DE SUPERFICIE
+============================================ */
+.surface-transition { transition: all 0.3s ease; }
+body.surface-transition .surface-btn,
+body.surface-transition .badge,
+body.surface-transition .col-elo {
+    transition: all 0.3s ease;
+}
