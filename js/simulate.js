@@ -376,8 +376,8 @@ function displayRecommendation(favorite) {
     const text = document.getElementById('recommendation-text');
     
     badge.className = 'value-badge value-high';
-    badge.querySelector('.value-text').textContent = '✅ VALOR ENCONTRADO';
-    text.textContent = `Si encuentras cuota > ${favorite.odds.toFixed(2)} para ${favorite.name}, es una apuesta de VALOR recomendada.`;
+    badge.querySelector('.value-text').textContent = 'Encuentra el valor';
+    text.textContent = `Si encuentras cuota un poco superior a ${favorite.odds.toFixed(2)} para ${favorite.name}, es una apuesta de VALOR recomendada.`;
 }
 
 function checkHouseOdds(data) {
