@@ -4,7 +4,7 @@ Con versionado de cache y actualización forzada
 ============================================ */
 
 // ⚠️ IMPORTANTE: Cambia esta versión cada vez que actualices la app
-const CACHE_VERSION = 'v2.1';
+const CACHE_VERSION = 'v2.2';
 const CACHE_NAME = `courtsight-${CACHE_VERSION}`;
 
 const ASSETS_TO_CACHE = [
